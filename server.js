@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
-require('dotenv').config();
+const mongoose = require('mongoose'); 
 
 const userDetails = require('./userDetails');
 
@@ -276,13 +275,14 @@ app.post('/api/update-problem-status', authenticateUser, async (req, res) => {
     }
 });
 
+app.use((req,res)=>res.send("OK"))
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ error: 'Something went wrong!' });
 });
 
-const PORT_BACKEND = process.env.PORT_BACKEND || 5000;
+const PORT_BACKEND = process.env.PORT || 5000;
 app.listen(PORT_BACKEND, () => {
     console.log(`Server is running on port ${PORT_BACKEND}`);
 }); 
