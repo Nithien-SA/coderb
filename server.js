@@ -5,13 +5,10 @@ require('dotenv').config();
 
 const userDetails = require('./userDetails');
 
-const app = express();
-
-// Middleware
+const app = express(); 
 app.use(cors());
 app.use(express.json());
-
-// MongoDB Connection
+ 
 mongoose.connect('mongodb+srv://DemoUser:DemoUser@coder.c1plib1.mongodb.net/?retryWrites=true&w=majority&appName=Coder', {
     useNewUrlParser: true,
     useUnifiedTopology: true
