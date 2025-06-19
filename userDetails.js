@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+const mongoose = require('mongoose'); 
 
 // MongoDB Connection
 mongoose.connect('mongodb+srv://DemoUser:DemoUser@coder.c1plib1.mongodb.net/?retryWrites=true&w=majority&appName=Coder', {
